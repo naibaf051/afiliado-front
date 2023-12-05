@@ -1,0 +1,70 @@
+.mi-tabla {
+  border-collapse: collapse;
+  width: 80%;
+}
+
+.mi-tabla th,
+.mi-tabla td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.encabezado {
+  background-color: #f2f2f2;
+}
+
+.boton-agregar {
+  margin: 10px;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  align-items: flex-end;
+}
+
+.boton-agregar:hover {
+  background-color: #45a049;
+}
+
+.boton-cancelar {
+  margin: 10px;
+  padding: 10px 20px;
+  background-color: #c9c9c9;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  align-items: flex-end;
+}
+
+.boton-cancelar:hover {
+  background-color: #afafaf;
+}
+
+.boton-accion {
+  background-color: #faab33;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 5px;
+  margin-right: 5px;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+}
+
+.boton-accion:hover {
+  background-color: #813b02;
+}
+
+.icons-accion {
+  width: 15px;
+  height: 15px;
+}
+
+.agregar-afiliado {
+  padding: 50px;
+}

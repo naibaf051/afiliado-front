@@ -1,0 +1,80 @@
+<div class="agregar-afiliado" *ngIf="!mostrarForm">
+  <h1>Tabla de Afiliaciones</h1>
+  <button class="boton-agregar" (click)="agregar()">Agregar</button>
+  <table class="mi-tabla">
+    <thead>
+      <tr>
+        <th class="encabezado">Nombre</th>
+        <th class="encabezado">Fecha Nacimiento</th>
+        <th class="encabezado">Dirección</th>
+        <th class="encabezado">Telefono</th>
+        <th class="encabezado">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let obj of afiliaciones">
+        <td>{{ obj?.nombre }}</td>
+        <td>{{ obj?.nacimiento }}</td>
+        <td>{{ obj?.direccion }}</td>
+        <td>{{ obj?.telefono }}</td>
+        <td>
+          <button class="boton-accion" (click)="editar(obj)">
+            <img
+              class="icons-accion"
+              src="assets/icons/edit-icon.png"
+              alt="Editar"
+            />
+          </button>
+          <button class="boton-accion" (click)="eliminar(obj)">
+            <img
+              class="icons-accion"
+              src="assets/icons/delete-icon.png"
+              alt="Eliminar"
+            />
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="agregar-afiliado" *ngIf="mostrarForm">
+  <h2>{{ esNuevo ? "Ingresar" : "Actualizar" }} Datos de Afiliado</h2>
+
+  <div class="row">
+    <label for="nombre">Nombre: </label>
+    <input type="text" [(ngModel)]="afiliacion.nombre" required />
+  </div>
+  <div class="row">
+    <label for="nombre">Nacimiento: </label>
+    <input type="date" [(ngModel)]="afiliacion.nacimiento" required />
+  </div>
+  <div class="row">
+    <label for="nombre">Direccion: </label>
+    <input type="text" [(ngModel)]="afiliacion.direccion" required />
+  </div>
+  <div class="row">
+    <label for="nombre">Telefono: </label>
+    <input type="text" [(ngModel)]="afiliacion.telefono" required />
+  </div>
+  <div class="row">
+    <label for="nombre">Ips: </label>
+    <input type="text" [(ngModel)]="afiliacion.ips" required />
+  </div>
+  <div class="row">
+    <label for="nombre">Genero: </label>
+    <select [(ngModel)]="afiliacion.genero" required>
+      <option *ngFor="let genero of generos" [value]="genero.value">{{ genero.label }}</option>
+    </select>
+  </div>
+
+  <br />
+  <button class="boton-cancelar" type="button" (click)="cancelar()">
+    Cancelar
+  </button>
+  <button class="boton-agregar" type="button" (click)="guardar()">
+    Guardar
+  </button>
+</div>
+
+<router-outlet></router-outlet>
